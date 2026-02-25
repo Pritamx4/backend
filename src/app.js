@@ -28,5 +28,15 @@ app.delete('/notes/:idx',(req,res)=>{
     });
 });
 
+app.patch('/notes/:idx',(req,res)=>{
+    const idx = req.params.idx;
+    const description = req.body.description;
+    notes [idx].description = description;
+    
+    res.status(200).json({
+        message: "note updated sucessfully"
+    });
+});
+
 
 module.exports = app;
